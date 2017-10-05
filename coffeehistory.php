@@ -7,8 +7,7 @@ include "config/dbconx.php";
 $sql    = 'select usercoffee from  tbl_coffeeuse WHERE userid ='.$_SESSION['userid'];
 $result = mysqli_query($link,$sql );
 
-
- echo  $_SESSION['username']."'s Results </br>";
+echo  $_SESSION['username']."'s Results </br>";
  
  
 if (!$result) {
