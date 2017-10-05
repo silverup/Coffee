@@ -1,0 +1,56 @@
+use cofeedb
+
+
+
+
+create table tbl_users(
+userid int not null AUTO_INCREMENT,
+username varchar(100),
+userpassword varchar(50),
+fullname varchar(100),
+userstatus char(1),
+useraddeddate datetime,
+primary key (userid)
+
+
+)
+
+
+
+
+create table tbl_coffee(
+coffeeid int not null AUTO_INCREMENT,
+coffeedesc varchar(100),
+primary key (coffeeid)
+
+)
+
+
+
+create table tbl_coffeeuse(
+coffeeuseid int not null  AUTO_INCREMENT,
+usercoffee datetime,
+coffeeid int references tbl_coffee(coffeeid) ,
+userid int  references tbl_users(userid),
+primary key (coffeeuseid)
+
+)
+
+
+
+
+insert into tbl_users(username,fullname) values ('Jon','Jon Do')
+
+
+
+
+
+insert into tbl_users(username,fullname) values ('Paul','Cole')
+
+
+
+insert into tbl_coffee(coffeedesc) values ('Black Coffee')
+
+
+
+insert into tbl_coffeeuse(usercoffee,coffeeid,userid ) values (NOW(),1,1)
